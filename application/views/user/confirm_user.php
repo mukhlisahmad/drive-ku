@@ -35,7 +35,7 @@
         </td>
     </tr>
 
-    <!-- Modal untuk konfirmasi -->
+    <!-- Modal  -->
     <div class="modal fade" id="confirmationModal<?php echo $user['id_user']; ?>" tabindex="-1" aria-labelledby="confirmationModalLabel<?php echo $user['id_user']; ?>" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
