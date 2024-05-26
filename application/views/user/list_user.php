@@ -86,7 +86,7 @@ if ($user['is_active'] == 0) {
             </div>
         </div>
     </div>
-                                <!-- Modal untuk konfirmasi -->
+                                <!-- Modal -->
     <div class="modal fade" id="deletModal<?php echo $user['id_user']; ?>" tabindex="-1" aria-labelledby="deletModalLabel<?php echo $user['id_user']; ?>" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
