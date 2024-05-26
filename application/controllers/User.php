@@ -61,16 +61,9 @@ class User extends CI_Controller
     public function download($id_drive)
     {
         if (!empty($id_drive)) {
-            //load download helper
             $this->load->helper('download');
-
-            //get file info from database
             $fileInfo = $this->User_model->getRows(array('id_drive' => $id_drive));
-
-            //file path
             $file = './assets/File/' . $fileInfo['file'];
-
-            //download file
             force_download($file, null);
         }
     }
@@ -306,10 +299,8 @@ class User extends CI_Controller
         $data = [
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
         ];
-        // Ambil data folder berdasarkan id_folder
         $data['folder'] = $this->User_model->get_folder_by_id($id_folder);
         $user = $this->session->userdata('email');
-        // Ambil data file dalam folder ini
         $data['files'] = $this->User_model->get_files_in_folder($id_folder);
 
         $data['title'] = 'Arsip';
@@ -352,8 +343,8 @@ class User extends CI_Controller
             $upload_data = $this->upload->data();
             $data = array(
                 'email' => $this->session->userdata('email'),
-                'name_file' => $upload_data['file_name'], // Menggunakan file_name untuk mendapatkan nama file
-                'file' => $upload_data['full_path'], // Menggunakan full_path untuk mendapatkan path lengkap file
+                'name_file' => $upload_data['file_name'], 
+                'file' => $upload_data['full_path'], 
                 'id_folders' => $id_folder,
                 'date_created' => date('Y-m-d H:i:s'),
             );
@@ -375,21 +366,7 @@ class User extends CI_Controller
             echo "File not found.";
         }
     }
-    // public function confirm_user()
-    // {
-    //     $data = [
-    //         'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
-    //     ];
-    //     $data['unconfirmed_users'] = $this->db->get_where('user', ['is_active' => 0])->result_array();
-
-    //     $data['title'] = 'Arsip';
-    //     $this->load->view('template/header', $data);
-    //     $this->load->view('template/sidebar', $data);
-    //     $this->load->view('user/confirm_user', array('error' => ''));
-    //     $this->load->view('template/topbar_1', $data);
-    //     $this->load->view('template/footer', $data);
-    // }
-
+ 
     public function activate($user_id)
     {
         $this->db->where('id_user', $user_id);
