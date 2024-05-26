@@ -30,13 +30,13 @@
             </div>
         </div>
     </div>
-    <!-- Button trigger modal -->
+    <!-- Button modal -->
     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalUpdateUser">
         Update Profile
     </button>
 </div>
 
-<!-- Modal Update User -->
+<!-- Modal Update -->
 <div class="modal fade" id="modalUpdateUser" tabindex="-1" aria-labelledby="modalUpdateUserLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
