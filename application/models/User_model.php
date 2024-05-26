@@ -70,21 +70,17 @@ class User_model extends CI_Model
 
         if (array_key_exists('id_drive', $params) && !empty($params['id_drive'])) {
             $this->db->where('id_drive', $params['id_drive']);
-            //get records
             $query = $this->db->get();
             $result = ($query->num_rows() > 0) ? $query->row_array() : false;
         } else {
-            //set start and limit
             if (array_key_exists('start', $params) && array_key_exists('limit', $params)) {
                 $this->db->limit($params['limit'], $params['start']);
             } elseif (!array_key_exists('start', $params) && array_key_exists('limit', $params)) {
                 $this->db->limit($params['limit']);
             }
-            //get records
             $query = $this->db->get();
             $result = ($query->num_rows() > 0) ? $query->result_array() : false;
         }
-        //return fatches data
         return $result;
     }
     public function getRows1($params = array())
@@ -96,21 +92,17 @@ class User_model extends CI_Model
 
         if (array_key_exists('id_surat', $params) && !empty($params['id_surat'])) {
             $this->db->where('id_surat', $params['id_surat']);
-            //get records
             $query = $this->db->get();
             $result = ($query->num_rows() > 0) ? $query->row_array() : false;
         } else {
-            //set start and limit
             if (array_key_exists('start', $params) && array_key_exists('limit', $params)) {
                 $this->db->limit($params['limit'], $params['start']);
             } elseif (!array_key_exists('start', $params) && array_key_exists('limit', $params)) {
                 $this->db->limit($params['limit']);
             }
-            //get records
             $query = $this->db->get();
             $result = ($query->num_rows() > 0) ? $query->result_array() : false;
         }
-        //return fatches data
         return $result;
     }
     public function getRows2($params = array())
