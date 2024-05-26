@@ -78,7 +78,6 @@ $ekstensi = strtolower(end($ekstensi));
             <label for="nama_folder" class="form-label">Nama Folder</label>
             <input type="text" class="form-control" id="nama_folder" name="nama_folder">
           </div>
-          <!-- Tambah field lainnya sesuai kebutuhan -->
           <button type="submit" class="btn btn-primary">Tambah</button>
         </form>
       </div>
